@@ -18,7 +18,7 @@ const SplashScreen = (props) => {
             <View style={styles.splash__second}>
                 <View style={styles.splash__educationQuote}>
                     <Text style={styles.splash__educationQuote1}>
-                        Optimize <Text style={styles.splash__educationQuote2}>Workers</Text>
+                        Campus Recruitment <Text style={styles.splash__educationQuote2}>System</Text>
                     </Text>
                     <Text style={styles.splash__educationQuote3}>
                         An investment in knowledge pays the best interest
@@ -70,13 +70,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         // backgroundColor: 'red',
         width: "95%"
+
     },
     splash__educationQuote1: {
-        fontSize: 25,
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     splash__educationQuote2: {
         fontSize: 25,
-        color: '#2ff1f5'
+        color: '#1db5b5'
     },
     splash__educationQuote3: {
         fontSize: 15,
@@ -93,7 +96,7 @@ const styles = StyleSheet.create({
     },
     splash__signIn: {
         alignItems: 'center',
-        backgroundColor: '#2ff1f5',
+        backgroundColor: '#1db5b5',
         padding: 15,
         width: '90%',
         borderRadius: 10,
