@@ -1,25 +1,17 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
+import AppNavigation from './src/Config/AppNavigation';
 
-import SplashScreen from './src/Screens/SplashScreen';
+
+
 const App = () => {
   return (
-    <View>
-      <SplashScreen />
-      <Text> har har mahadev</Text>
-    </View>
+    <AppNavigation />
   )
 }
 
-const styles = StyleSheet.create({
+// const styles = StyleSheet.create({
 
-});
+// });
 
 export default App;
