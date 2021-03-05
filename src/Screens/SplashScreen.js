@@ -26,10 +26,12 @@ const SplashScreen = (props) => {
                 </View>
                 <View style={styles.splash__buttons}>
                     <TouchableOpacity style={styles.splash__signIn} onPress={() => props.navigation.navigate("SignIn")}>
+                    {/* <TouchableOpacity style={styles.splash__signIn} onPress={() => console.log('working')}> */}
                         <Text style={{ color: "#fff", fontWeight: 'bold', fontSize: 20 }}>Sign In</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.splash__signUp}>
                         <Text style={{ color: "gray", fontWeight: 'bold', fontSize: 15 }} onPress={() => props.navigation.navigate("SignUp")}>Sign Up</Text>
+                        {/* <Text style={{ color: "gray", fontWeight: 'bold', fontSize: 15 }} onPress={() => console.log('signup is working')}>Sign Up</Text> */}
                     </TouchableOpacity>
                 </View>
             </View>

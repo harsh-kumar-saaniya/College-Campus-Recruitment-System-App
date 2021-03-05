@@ -4,7 +4,7 @@ import * as Animatable from 'react-native-animatable';
 import { Form, Item, Input, Label } from 'native-base';
 
 
-const SignUp = () => {
+const SignUp = (props) => {
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor='#1db5b5' barStyle="dark-content" />

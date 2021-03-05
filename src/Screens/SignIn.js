@@ -6,11 +6,11 @@ import { Form, Item, Input, Label } from 'native-base';
 
 
 const SignIn = (props) => {
-    const [email, setEmail] = useState('');
-    const [password, setpassword] = useState('');
-    const handlingSign = () => {
-        console.log(email, password)
-    }
+    // const [email, setEmail] = useState('');
+    // const [password, setpassword] = useState('');
+    // const handlingSign = () => {
+    //     console.log(email, password)
+    // }
 
     return (
         <View style={styles.container}>
