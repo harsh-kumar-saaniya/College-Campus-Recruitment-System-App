@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, StatusBar, Image, TouchableOpacity, Text, View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Form, Item, Input, Label } from 'native-base';
+import auth from '@react-native-firebase/auth';
 
 
 const SignUp = (props) => {
+
+    const [email, setEmail] = useState('');
+    const [password, setpassword] = useState('');
+    const [conffirmPassword, setConfirmPassword] = useState('');
+
+
+    const handleSignUp = () => {
+        console.log("getting email", email)
+        console.log("getting password", password)
+        console.log("getting password", conffirmPassword)
+
+        if (password === conffirmPassword) {
+            auth().createUserWithEmailAndPassword(email, password)
+                .then(auth => {
+                    if (auth) {
+                        alert('Sign Up Successfully');
+                        props.navigation.replace('Home');
+                    }
+                })
+                .catch(error => alert(error.message))
+        }
+        else {
+            alert('Wrong password');
+        }
+    }
+
+
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor='#1db5b5' barStyle="dark-content" />
@@ -24,18 +52,29 @@ const SignUp = (props) => {
                     <Form>
                         <Item floatingLabel>
                             <Label>Email Address</Label>
-                            <Input />
+                            <Input
+                                autoCompleteType="email"
+                                onChangeText={(e) => setEmail(e)}
+                            />
                         </Item>
                         <Item floatingLabel last>
                             <Label>Password</Label>
-                            <Input />
+                            <Input
+                                autoCompleteType="password"
+                                secureTextEntry={true}
+                                onChangeText={(e) => setpassword(e)}
+                            />
                         </Item>
                         <Item floatingLabel last>
                             <Label>Confirm Password</Label>
-                            <Input />
+                            <Input
+                                autoCompleteType="password"
+                                secureTextEntry={true}
+                                onChangeText={(e) => setConfirmPassword(e)}
+                            />
                         </Item>
                         <View style={styles.splash__buttons}>
-                            <TouchableOpacity style={styles.splash__signIn} onPress={() => props.navigation.navigate("SignIn")}>
+                            <TouchableOpacity style={styles.splash__signIn} onPress={() => handleSignUp()}>
                                 <Text style={{ color: "#fff", fontWeight: 'bold', fontSize: 20 }}>Sign Up</Text>
                             </TouchableOpacity>
                         </View>

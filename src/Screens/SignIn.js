@@ -2,15 +2,25 @@ import React, { useState } from 'react'
 import { StyleSheet, TextInput, Image, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import * as Animatable from 'react-native-animatable';
 import { Form, Item, Input, Label } from 'native-base';
+import auth from '@react-native-firebase/auth';
 
 
 
 const SignIn = (props) => {
-    // const [email, setEmail] = useState('');
-    // const [password, setpassword] = useState('');
-    // const handlingSign = () => {
-    //     console.log(email, password)
-    // }
+    const [email, setEmail] = useState('');
+    const [password, setpassword] = useState('');
+
+    const handlingSign = () => {
+
+        auth().signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                if (auth) {
+                    props.navigation.replace('Home');
+                }
+            })
+
+    }
+
 
     return (
         <View style={styles.container}>
